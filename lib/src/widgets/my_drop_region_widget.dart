@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:drag_and_drop_example/src/base/modals/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:super_drag_and_drop/super_drag_and_drop.dart';
 
@@ -49,7 +48,6 @@ class _MyDropRegionState extends State<MyDropRegion> {
         final dataReader = event.session.items.first.dataReader;
         if (dataReader != null) {
           if (!dataReader.canProvide(Formats.plainTextFile)) {
-            SnackBarService.showSnackBar('File Type not Supported!');
             return;
           }
           dataReader.getFile(Formats.plainTextFile, (value) async {
